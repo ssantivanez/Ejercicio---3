@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function numeroDeElementos(numero)
+    {
+        let numeros=[0,1];
+        for (let i = 2; i < numero; i++) {
+            numeros[i] = numeros[i - 2] + numeros[i - 1];
+        }
+        return numeros;
+    }
+    console.log(numeroDeElementos(10))
+</script>
+<script>
+    let inicio = ['unacadena', 3, 9, 1, 10, 500, 1, 10, true];
+    let inicioFiltrar = [];
+    for (let i = 0; i < inicio.length; i++) {
+        //console.log(typeof inicio[i]);
+        if (typeof inicio[i] === "number") {
+            console.log(inicio[i]);
+            inicioFiltrar.push(inicio[i])
+        }
+    }
+    console.log(inicioFiltrar)
+
+    /*for (let j = 0; j < inicioFiltered.length; j++) {
+
+      console.log(inicioFiltered[j])
+    }*/
+
+    for (let x = 0; x < inicioFiltrar.length; x++) {
+        for (let i = 0; i < inicioFiltrar.length; i++) {
+            if(inicioFiltrar[i] > inicioFiltrar[i+1]){
+                let tmp = inicioFiltrar[i+1];
+                inicioFiltrar[i+1] = inicioFiltrar[i];
+                inicioFiltrar[i] = tmp;
+            }
+        }
+    }
+    console.log(inicioFiltrar)
+</script>
+
+</body>
+</html>
